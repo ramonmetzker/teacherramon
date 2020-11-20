@@ -1,0 +1,228 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html{
+	height:100%;
+}
+
+body{
+	font-family: 'Open Sans', sans-serif;
+	background:#000;
+	height:100%;
+}
+
+#wrapper{
+	width:100%;
+	height:100%;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+
+#picker{
+	background:rgba(255,255,255,0.3);
+	width:480px;
+	border-radius:5px;
+	overflow:hidden;
+	display:grid;
+	grid-template-columns:1fr 150px;
+	/*align-items:stretch;*/
+}
+
+#picker .calendar header{
+	background:#0F0896;
+	display:grid;
+	grid-template-columns:50px 1fr 50px;
+	align-items:center;
+}
+
+#picker .hours{
+	background:rgba(0,0,0,0.2);
+	position:relative;
+}
+
+#picker .hours header{
+	background:#040170;
+	align-items:center;
+}
+
+#picker .calendar header .arrow{
+	color:#fff;
+	text-decoration:none;
+}
+
+#picker .calendar header .arrow,
+#picker .calendar header .month-title,
+#picker .hours header{
+	text-align:center;
+	padding:10px;
+}
+
+#picker .calendar header .month-title,
+#picker .hours header{
+	font-size:20px;
+	font-weight:bold;
+	color:#fff;
+}
+
+#picker .calendar .days{
+	padding:20px;
+}
+
+#picker .calendar .days table{
+	width:100%;
+	text-align:center;
+	border-spacing:5px;
+	border-collapse:separate;
+	table-layout:fixed;
+}
+
+#picker .calendar .days table th{
+	padding:5px;
+	font-size:14px;
+	font-weight:bold;
+	color:#fff;
+}
+
+#picker .calendar .days table td{
+	padding:5px;
+	width:calc(100% / 7);
+	background:rgba(255,255,255,0.6);
+	cursor:pointer;
+	transition-duration:0.2s;
+	font-weight:bold;
+	color:rgba(0,0,0,0.7);
+}
+
+#picker .calendar .days table td.selected,
+#picker .calendar .days table td.selected:hover{
+	background:#fff;
+}
+
+#picker .calendar .days table td:hover{
+	background:rgba(255,255,255,0.8);
+}
+
+#picker .calendar .days table td.previous,
+#picker .calendar .days table td.following{
+	opacity:0.3;
+}
+
+#picker .hours .time-selection{
+	padding:10px 20px;
+}
+
+#picker .hours .time-selection .description{
+	color:#fff;
+	font-size:14px;
+	text-align:center;
+	display:block;
+	margin-bottom:10px;
+}
+
+#picker .hours .time-selection ul li{
+	display:block;
+	margin-bottom:10px;
+}
+
+#picker .hours .time-selection ul li a{
+	display:grid;
+	color:rgba(0,0,0,0.7);
+	border-radius:5px;
+	background:rgba(255,255,255,0.4);
+	text-decoration:none;
+	font-weight:bold;
+	grid-template-columns:40px 1fr;
+}
+
+#picker .hours .time-selection ul li a.selected{
+	background:#fff;
+}
+
+#picker .hours .time-selection ul li a .icon{
+	display:inline-block;
+	background:rgba(0,0,0,0.3);
+	width:100%;
+	height:100%;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	border-radius:5px;
+}
+
+#picker .hours .time-selection ul li a .hour{
+	padding:10px;
+}
+
+#picker .hours .submit-scheduling{
+	position:absolute;
+	right:0;
+	bottom:0;
+	width:100%;
+}
+
+#picker .hours .submit-scheduling a{
+	text-align:center;
+	display:block;
+	padding:10px;
+	color:#fff;
+	text-decoration:none;
+	font-weight:bold;
+	background:#0F0896;
+	transition-duration:0.2s;
+}
+
+#picker .hours .submit-scheduling a i{
+	display:inline-block;
+	margin-left:10px;
+}
+
+#picker .hours .submit-scheduling a:hover{
+	background:#0903BC;
+}
